@@ -23,7 +23,7 @@ const ThemeChanger = () => {
 
   return (
     <button
-      className="relative w-10 h-10 rounded-full bg-orange-400 dark:bg-purple-400 drop-shadow-md overflow-hidden"
+      className="navbar_btn bg-orange-400 dark:bg-purple-400"
       onClick={toggleTheme}
     >
         <FaMoon className={`absolute bottom-[50%] ${isDark? "translate-y-[50%]":"translate-y-10"} right-[50%] translate-x-[50%] text-purple-900`} />

@@ -6,9 +6,11 @@
     transition: all ease 150ms;
 }
 
-
 .navbar{
-    @apply fixed bottom-4 right-[50%] translate-x-[50%] h-14 w-fit py-2 px-6 drop-shadow-xl hover:drop-shadow-sm rounded-full bg-light-2 dark:bg-dark-2 border-dark-2 dark:border-light-2 border-[1px]
+    @apply fixed flex items-center justify-center gap-4 bottom-4 right-[50%] translate-x-[50%] h-14 w-fit py-2 px-6 drop-shadow-xl hover:drop-shadow-sm rounded-full bg-light-2 dark:bg-dark-2 border-dark-2 dark:border-light-2 border-[1px]
+}
+.navbar_btn{
+    @apply flex items-center justify-center relative w-10 h-10 rounded-full drop-shadow-md overflow-hidden
 }
 
 button{
