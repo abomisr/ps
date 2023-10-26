@@ -1,23 +1,26 @@
-import type { Metadata } from 'next'
-import { Inter } from 'next/font/google'
-import './globals.css'
-import { localesType } from '../types';
+import type { Metadata } from "next";
+import { Inter } from "next/font/google";
+import "./globals.css";
+import { localesType } from "../types";
+import ThemeProvider from "@/providers/ThemeProvider";
 
-const inter = Inter({ subsets: ['latin'] })
+const inter = Inter({ subsets: ["latin"] });
 
-
-export function generateMetadata({params: {locale}}:{params:{locale: localesType}}):Metadata {
-
+export function generateMetadata({
+  params: { locale },
+}: {
+  params: { locale: localesType };
+}): Metadata {
   const metaData = {
-    "ar":{
-      t:"فلسطين القصة كاملة",
-      d:"فلسطين القصة كاملة"
+    ar: {
+      t: "فلسطين القصة كاملة",
+      d: "فلسطين القصة كاملة",
     },
-    "en":{
-      t:'Palestine - israel the full story',
-      d:'Palestine - israel the full story',
+    en: {
+      t: "Palestine - israel the full story",
+      d: "Palestine - israel the full story",
     },
-  }
+  };
 
   return {
     title: metaData[locale].t || metaData.en.t,
@@ -25,21 +28,18 @@ export function generateMetadata({params: {locale}}:{params:{locale: localesType
   };
 }
 
-
 interface Props {
-  children: React.ReactNode,
-  params: {locale:any}
+  children: React.ReactNode;
+  params: { locale: any };
 }
-export default function RootLayout({
-  children,
-  params: {locale},
-}:Props) {
-  
+export default function RootLayout({ children, params: { locale } }: Props) {
   return (
     <html lang={locale}>
       <body className={inter.className}>
-        {children}
+        <ThemeProvider>
+          {children}
+        </ThemeProvider>
       </body>
     </html>
-  )
+  );
 }

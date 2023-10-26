@@ -1,7 +1,12 @@
 "use client"
+
+import ThemeChanger from "./buttons/ThemeChanger"
+
 const Navbar = () => {
   return (
-    <div>Navbar</div>
+    <div className="navbar">
+      <ThemeChanger />
+    </div>
   )
 }
 
