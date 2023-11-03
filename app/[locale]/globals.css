@@ -3,7 +3,7 @@
 @tailwind utilities;
 
 *{
-    transition: all ease 150ms;
+    transition: all ease 200ms;
 }
 
 ::-webkit-scrollbar{
@@ -14,11 +14,15 @@
 }
 
 .navbar{
-    @apply fixed flex items-center justify-center gap-12 bottom-4 right-[50%] translate-x-[50%] h-14 w-fit py-2 px-6 drop-shadow-xl hover:drop-shadow-sm rounded-full bg-light-2 dark:bg-dark-2 border-dark-2 dark:border-light-2 border-[1px]
+    @apply fixed flex items-center justify-center bottom-4 right-[50%] translate-x-[50%] h-14 w-fit py-2 md:px-6 px-3 drop-shadow-xl hover:drop-shadow-sm rounded-xl bg-light-2 dark:bg-dark-2 border-dark-2 dark:border-light-2 border-[1px]
 }
 .navbar_btn{
-    @apply flex items-center justify-center relative w-10 h-10 rounded-full drop-shadow-md overflow-hidden
+    @apply flex items-center justify-center relative w-9 h-9 rounded-full drop-shadow-md overflow-hidden
 }
+.navbar_link{
+    @apply border-gray-500 border-[1px] rounded-[5px] dark:bg-dark-1 bg-light-1 w-9 h-9 flex items-center justify-center hover:scale-110 hover:-mt-1.5
+}
+
 
 button{
     @apply opacity-95

@@ -4,6 +4,7 @@ import "./globals.css";
 import { localesType } from "../types";
 import ThemeProvider from "@/providers/ThemeProvider";
 import AnimatedCursor from "react-animated-cursor";
+import { TooltipProvider } from "@/components/ui/tooltip";
 
 const inter = Inter({ subsets: ["latin"] });
 
@@ -37,15 +38,17 @@ export default function RootLayout({ children, params: { locale } }: Props) {
   return (
     <html lang={locale}>
       <body className={inter.className}>
+      <TooltipProvider>
         <ThemeProvider>{children}</ThemeProvider>
-        <AnimatedCursor
-          innerSize={16}
-          outerSize={16}
+      </TooltipProvider>
+        {/* <AnimatedCursor
+          innerSize={14}
+          outerSize={14}
           innerStyle={{backgroundColor:"rgb(0,0,0,0.1)", backdropFilter:"invert(100%)"}}
           outerStyle={{backgroundColor:"rgb(0,0,0,0.1)", backdropFilter:"invert(100%)"}}
           outerAlpha={0.2}
           innerScale={0.7}
-          outerScale={3}
+          outerScale={1.5}
           clickables={[
             "a",
             'input[type="text"]',
@@ -59,7 +62,7 @@ export default function RootLayout({ children, params: { locale } }: Props) {
             "button",
             ".link",
           ]}
-        />
+        /> */}
       </body>
     </html>
   );
