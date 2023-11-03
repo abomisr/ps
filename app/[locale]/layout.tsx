@@ -3,6 +3,7 @@ import { Inter } from "next/font/google";
 import "./globals.css";
 import { localesType } from "../types";
 import ThemeProvider from "@/providers/ThemeProvider";
+import AnimatedCursor from "react-animated-cursor";
 
 const inter = Inter({ subsets: ["latin"] });
 
@@ -13,12 +14,12 @@ export function generateMetadata({
 }): Metadata {
   const metaData = {
     ar: {
-      t: "فلسطين القصة كاملة",
-      d: "فلسطين القصة كاملة",
+      t: "جرائم الاحتلال الإرهابي الإسرائيلي",
+      d: "جرائم الاحتلال الإرهابي الإسرائيلي",
     },
     en: {
-      t: "Palestine - israel the full story",
-      d: "Palestine - israel the full story",
+      t: "Crimes of the Israeli terrorist occupation",
+      d: "Crimes of the Israeli terrorist occupation",
     },
   };
 
@@ -36,9 +37,29 @@ export default function RootLayout({ children, params: { locale } }: Props) {
   return (
     <html lang={locale}>
       <body className={inter.className}>
-        <ThemeProvider>
-          {children}
-        </ThemeProvider>
+        <ThemeProvider>{children}</ThemeProvider>
+        <AnimatedCursor
+          innerSize={16}
+          outerSize={16}
+          innerStyle={{backgroundColor:"rgb(0,0,0,0.1)", backdropFilter:"invert(100%)"}}
+          outerStyle={{backgroundColor:"rgb(0,0,0,0.1)", backdropFilter:"invert(100%)"}}
+          outerAlpha={0.2}
+          innerScale={0.7}
+          outerScale={3}
+          clickables={[
+            "a",
+            'input[type="text"]',
+            'input[type="email"]',
+            'input[type="number"]',
+            'input[type="submit"]',
+            'input[type="image"]',
+            "label[for]",
+            "select",
+            "textarea",
+            "button",
+            ".link",
+          ]}
+        />
       </body>
     </html>
   );
