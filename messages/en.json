@@ -1,5 +1,6 @@
 {
-    "Index": {
-      "title": "Hello world!"
-    }
+    "Home": {
+      "warning": "This website contains real-life scenes that may be distressing. Please mentally prepare yourself before proceeding. If you are ready, you may choose to accept and continue browsing. Take care of yourself."
+    },
+    "accept":"Accept"
   }

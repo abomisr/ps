@@ -1,10 +1,10 @@
 "use client";
 
-import { LocalesChanger } from "./buttons/LocalesChanger";
-import ThemeChanger from "./buttons/ThemeChanger";
+import { LocalesChanger } from "../buttons/LocalesChanger";
+import ThemeChanger from "../buttons/ThemeChanger";
 import { navbarLinks } from "@/constants";
 import Link from "next/link";
-import { Tooltip, TooltipContent, TooltipTrigger } from "./ui/tooltip";
+import { Tooltip, TooltipContent, TooltipTrigger } from "../ui/tooltip";
 import { usePathname } from "next/navigation";
 import { useEffect, useState } from "react";
 
@@ -27,7 +27,7 @@ const Navbar = () => {
       window.removeEventListener("scroll", handleScroll);
     };
   });
-console.log(visible,position)
+
   return (
     <div className={`navbar ${visible || position < 50 ? "":"!-bottom-16 opacity-0"}`}>
       {/* <Logo /> */}

@@ -5,6 +5,9 @@ import { localesType } from "../types";
 import ThemeProvider from "@/providers/ThemeProvider";
 import AnimatedCursor from "react-animated-cursor";
 import { TooltipProvider } from "@/components/ui/tooltip";
+import Navbar from "@/components/shared/Navbar";
+import Message from "@/components/shared/Message";
+import { NextIntlClientProvider } from "next-intl";
 
 const inter = Inter({ subsets: ["latin"] });
 
@@ -35,13 +38,20 @@ interface Props {
   params: { locale: any };
 }
 export default function RootLayout({ children, params: { locale } }: Props) {
+
+
+
   return (
     <html lang={locale}>
       <body className={inter.className}>
       <TooltipProvider>
         <ThemeProvider>{children}</ThemeProvider>
+        <Navbar />
+        <NextIntlClientProvider locale="">
+          <Message />
+        </NextIntlClientProvider>
       </TooltipProvider>
-        {/* <AnimatedCursor
+        {/* <AnimatedCursor 
           innerSize={14}
           outerSize={14}
           innerStyle={{backgroundColor:"rgb(0,0,0,0.1)", backdropFilter:"invert(100%)"}}
