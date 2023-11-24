@@ -7,7 +7,8 @@ import AnimatedCursor from "react-animated-cursor";
 import { TooltipProvider } from "@/components/ui/tooltip";
 import Navbar from "@/components/shared/Navbar";
 import Message from "@/components/shared/Message";
-import { NextIntlClientProvider } from "next-intl";
+import ClientOnly from "@/components/shared/ClientOnly";
+import { useTranslations } from "next-intl";
 
 const inter = Inter({ subsets: ["latin"] });
 
@@ -38,7 +39,7 @@ interface Props {
   params: { locale: any };
 }
 export default function RootLayout({ children, params: { locale } }: Props) {
-
+  const t = useTranslations();
 
 
   return (
@@ -46,10 +47,10 @@ export default function RootLayout({ children, params: { locale } }: Props) {
       <body className={inter.className}>
       <TooltipProvider>
         <ThemeProvider>{children}</ThemeProvider>
-        <Navbar />
-        <NextIntlClientProvider locale="">
-          <Message />
-        </NextIntlClientProvider>
+        <ClientOnly>
+          <Navbar />
+        </ClientOnly>
+          <Message btnLabel={t("accept")} warningMessage={t("Home.warning")} />
       </TooltipProvider>
         {/* <AnimatedCursor 
           innerSize={14}
