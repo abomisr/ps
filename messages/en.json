@@ -1,6 +1,21 @@
 {
-    "Home": {
-      "warning": "This website contains real-life scenes that may be distressing. Please mentally prepare yourself before proceeding. If you are ready, you may choose to accept and continue browsing. Take care of yourself."
-    },
-    "accept":"Accept"
+  "Home": {
+    "criminal_ex": "Criminal Experience",
+    "warning": "This website contains real-life scenes that may be distressing. Please mentally prepare yourself before proceeding. If you are ready, you may choose to accept and continue browsing. Take care of yourself."
+  },
+  "accept": "Accept",
+
+  "Crimes": {
+    "victims": "Victims",
+    "target": "Target",
+    "more_targets": "and more",
+    "persons": "persons",
+    "resources": "Resources",
+
+    "lod_massacre": {
+      "title": "Lod Massacre",
+      "target": "Displacement of Palestinians",
+      "desc": "The Lod Massacre was a massacre committed by a Zionist commando unit led by Moshe Dayan on the 11th of July, 1948, in the city of Lod in Palestine. The city was stormed in the evening under a barrage of artillery shells."
+    }
   }
+}

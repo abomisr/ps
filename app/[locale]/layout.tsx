@@ -2,13 +2,14 @@ import type { Metadata } from "next";
 import { Inter } from "next/font/google";
 import "./globals.css";
 import { localesType } from "../types";
+import pick from 'lodash/pick';
 import ThemeProvider from "@/providers/ThemeProvider";
 import AnimatedCursor from "react-animated-cursor";
 import { TooltipProvider } from "@/components/ui/tooltip";
 import Navbar from "@/components/shared/Navbar";
 import Message from "@/components/shared/Message";
 import ClientOnly from "@/components/shared/ClientOnly";
-import { useTranslations } from "next-intl";
+import { NextIntlClientProvider, useMessages, useTranslations } from "next-intl";
 
 const inter = Inter({ subsets: ["latin"] });
 
@@ -43,16 +44,27 @@ export default function RootLayout({ children, params: { locale } }: Props) {
 
 
   return (
-    <html lang={locale}>
+    <html lang={locale} dir={locale === "ar"? "rtl":"ltr"}>
       <body className={inter.className}>
-      <TooltipProvider>
-        <ThemeProvider>{children}</ThemeProvider>
-        <ClientOnly>
-          <Navbar />
-        </ClientOnly>
-          <Message btnLabel={t("accept")} warningMessage={t("Home.warning")} />
-      </TooltipProvider>
-        {/* <AnimatedCursor 
+        <TooltipProvider>
+          <ThemeProvider>
+              {children}
+            <ClientOnly>
+              <Navbar />
+              <Message
+                btnLabel={t("accept")}
+                warningMessage={t("Home.warning")}
+              />
+            </ClientOnly>
+          </ThemeProvider>
+        </TooltipProvider>
+      </body>
+    </html>
+  );
+}
+
+{
+  /* <AnimatedCursor 
           innerSize={14}
           outerSize={14}
           innerStyle={{backgroundColor:"rgb(0,0,0,0.1)", backdropFilter:"invert(100%)"}}
@@ -73,8 +85,5 @@ export default function RootLayout({ children, params: { locale } }: Props) {
             "button",
             ".link",
           ]}
-        /> */}
-      </body>
-    </html>
-  );
+        /> */
 }
