@@ -6,7 +6,7 @@ export type crimeCard = {
     desc:string,
     date:string,
     target:string,
-    image: string,
+    image?: string,
     victims: {
         number:number,
         type:string,

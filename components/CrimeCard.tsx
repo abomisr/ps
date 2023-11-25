@@ -4,13 +4,18 @@ import { VerticalTimelineElement } from "react-vertical-timeline-component";
 import { GiDrippingKnife } from "react-icons/gi";
 import { useLocale, useTranslations } from "next-intl";
 import { FaWikipediaW } from "react-icons/fa";
+import { AiOutlineGlobal } from "react-icons/ai";
 import Image from "next/image"
 import Link from "next/link"
-
+import {motion} from "framer-motion"
+import { useMemo } from "react";
 
 const CrimeCard = ({ crime,isDark }: { crime: crimeCard,isDark: boolean }) => {
   const t = useTranslations("Crimes");
   const locale = useLocale();
+
+  const victims = useMemo(() => `${t("victims")}: ${crime.victims.map(((victim,index)=> ` ${victim.number} ${t(victim.type)}`))}.`, [crime])
+  // ${crime.victims.length>1 && index+1 !== crime.victims.length? "":"" }
 
   return (
     <>
@@ -25,7 +30,7 @@ const CrimeCard = ({ crime,isDark }: { crime: crimeCard,isDark: boolean }) => {
     >
       <div dir={locale === "ar"? "rtl":"ltr"}>
         <h3 className="vertical-timeline-element-title text-lg font-semibold">{t(crime.title)}</h3>
-        <h4 className="vertical-timeline-element-subtitle">{t("victims")}: {crime.victims.map((victim=>victim.number + ` ${t(victim.type)}`))}.</h4>
+        <h4 className="vertical-timeline-element-subtitle">{victims}</h4>
         <h4 className="vertical-timeline-element-subtitle">{t("target")}: {t(crime.target)} {t("more_targets")}.</h4>
         <p>
           {t(crime.desc)}
@@ -39,7 +44,7 @@ const CrimeCard = ({ crime,isDark }: { crime: crimeCard,isDark: boolean }) => {
                 resource.type === "wikipedia"?
                 <FaWikipediaW />
                 :
-                ""
+                <AiOutlineGlobal />
               }
             </Link>
           ))}
@@ -47,14 +52,21 @@ const CrimeCard = ({ crime,isDark }: { crime: crimeCard,isDark: boolean }) => {
       </div>
 
     </VerticalTimelineElement>
-    <div className="relative w-full h-[300px]">
-      <Image
-        src={"/crimes/" + crime.image}
-        alt={crime.image}
-        fill
-        className="object-contain rounded-md"
-      />
-    </div>
+    {
+      crime.image &&
+      <motion.div
+      initial={{ opacity: 0,marginBottom: -100 }}
+      whileInView={{ opacity: 1, marginBottom:0 }}
+      whileHover={{scale: 1.2}}
+      className="relative w-full h-[300px]">
+        <Image
+          src={"/crimes/" + crime.image}
+          alt={crime.image}
+          fill
+          className="object-contain rounded-md"
+        />
+      </motion.div>
+    }
     </>
   );
 };

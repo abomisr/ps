@@ -9,13 +9,37 @@
     "victims": "Victims",
     "target": "Target",
     "more_targets": "and more",
-    "persons": "persons",
     "resources": "Resources",
+    "persons": "Persons",
+    "children": "Children",
+    "injured": "Injured",
+    "at_least": "At least",
 
     "lod_massacre": {
       "title": "Lod Massacre",
       "target": "Displacement of Palestinians",
       "desc": "The Lod Massacre was a massacre committed by a Zionist commando unit led by Moshe Dayan on the 11th of July, 1948, in the city of Lod in Palestine. The city was stormed in the evening under a barrage of artillery shells."
+    },
+    "kafr_qasim_massacre": {
+      "title": "Kafr Qasim Massacre",
+      "target": "Palestinian Displacement",
+      "desc": "In Kafr Qasim, the village adjacent to the border with the West Bank, which fell under the authority of the Hashemite Kingdom of Jordan, a curfew was imposed at a time when farmers were tending to their fields a few kilometers away from the village, unaware of this curfew. When they arrived at the village, consisting of men, women, and children, the Israeli forces indiscriminately opened fire on them, killing 49 people, including eight women, one of whom was pregnant, and 18 children aged between 8 and 17. A squad of 11 soldiers from the Border Guard forces, led by Major Shmuel Melinki, was assigned to the operation. The squad was supervised by the commander of the border-guarding army battalion, Yissachar Shadmi. The orders were clear: 'Enforce the curfew harshly, not by arresting violators, but by opening fire.' The Israeli government, led by David Ben-Gurion, attempted to cover up the incident, but news of the massacre began to leak."
+    },
+    "khan_yunis_massacre": {
+      "title": "Khan Yunis Massacre",
+      "target": "Extermination of Fedayeen from Gaza, although the massacres were largely committed against civilians according to the Pierre Filou Committees.",
+      "desc": "In 1956, coinciding with the tripartite aggression on Egypt, the Israeli army carried out a brutal massacre in the Khan Yunis refugee camp in the southern Gaza Strip, resulting in the deaths of several hundred Palestinians. Palestinian sources record that at least 500 Palestinians in Khan Yunis were killed on November 3, 1956, while the United Nations documented the number of Palestinian casualties on that day as 275, a figure described as 'credible.'"
+    },
+    "rafah_massacre": {
+      "title": "Rafah Massacre 1956",
+      "target": "Extraction of Fedayeen Fighters from the Gaza Strip",
+      "desc": "The Rafah Massacre, which occurred on November 12, 1956, was a massacre carried out by the Israeli army in the town of Rafah during its occupation of the Sinai Peninsula and the Gaza Strip. Approximately 111 people from the residents of Rafah and the refugee camp were killed in this tragic event."
+    },
+    "bahr_al_baqar_massacre": {
+      "title": "Bahr al-Baqar Massacre",
+      "target": "Pressure on Egypt to Ceasefire in the War of Attrition",
+      "desc": "The Bahr al-Baqar Massacre was an attack carried out by the Israeli Air Force on the morning of April 8, 1970. Phantom aircraft bombed the Bahr al-Baqar Joint School in the village of Bahr al-Baqar in the Al-Husseiniya district of the Sharqia Governorate in Egypt. The attack resulted in the killing of 30 children, the injury of 50 others, and the complete destruction of the school building."
     }
+        
   }
 }

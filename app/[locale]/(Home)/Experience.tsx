@@ -17,7 +17,7 @@ const Experience = () => {
   },[theme])
 
   return (
-    <div className="md:w-[75%] sm:w-[85%] w-full p-4 flex items-center justify-center mx-auto" dir="ltr">
+    <div className="md:w-[80%] sm:w-[85%] w-full p-4 flex items-center justify-center mx-auto" dir="ltr">
         <VerticalTimeline animate={false}>
           {
             crimes.map(crime => (

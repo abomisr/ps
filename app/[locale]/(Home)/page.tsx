@@ -8,7 +8,7 @@ export default function Home({ params: { locale } }: {params:{locale:any}}) {
   const messages = useMessages();
 
   return (
-    <main className="min-h-[300vh] bg-light-1 dark:bg-dark-1 text-slate-800 dark:text-slate-200">
+    <main className="bg-light-1 dark:bg-dark-1 text-slate-800 dark:text-slate-200">
       <Title title={t("Home.criminal_ex")} />
       <NextIntlClientProvider
         locale={locale}
